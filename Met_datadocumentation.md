@@ -15,44 +15,44 @@ The data was created by staffs in The Metropolitan Museum of Art.
 File "MetObjects.csv" includes basic descriptive information of museum objects in MET, including geographic information, created date
 information, object title, etc.
 
+There are 51 fileds.
+['Object Number', 'Is Highlight', 'Is Public Domain', 'Is Timeline Work', 'Object ID', 'Department', 'AccessionYear', 'Object Name', 'Title', 'Culture', 'Period', 'Dynasty', 'Reign', 'Portfolio', 'Artist Role', 'Artist Prefix', 'Artist Display Name', 'Artist Display Bio', 'Artist Suffix', 'Artist Alpha Sort', 'Artist Nationality', 'Artist Begin Date', 'Artist End Date', 'Artist Gender', 'Artist ULAN URL', 'Artist Wikidata URL', 'Object Date', 'Object Begin Date', 'Object End Date', 'Medium', 'Dimensions', 'Credit Line', 'Geography Type', 'City', 'State', 'County', 'Country', 'Region', 'Subregion', 'Locale', 'Locus', 'Excavation', 'River', 'Classification', 'Rights and Reproduction', 'Link Resource', 'Object Wikidata URL', 'Metadata Date', 'Repository', 'Tags', 'Tags AAT URL']
+
+
 ## A short statement about what is being used from this dataset.
 In this file, we will extract the geographic data from fields 
 "geographic type", "city", "state", "county", "country", "region", "subregion", "locale", "locus", "artisist nationality".
-(We might need to screen the geographic information via "geographic type" and then extract the country information. If latitude/longitude numbers
-are offered, we can run some libaray and get the continent, state, country, or even city information).
 
 We will extract object date information from fields 
 "period", "artist begin date", "artist end date", "Object date", "Object begin date", "Object end date".
 
-(To be confirmed) In all, there are ??? records in this file. 
+In all, there are 474439 records in this file. 
 
 ## Relevant dates of the data collection.
-Published in 2017.
+Published in 2020.
 
 ## Describe the collection process.
-Download from https://github.com/american-art/ima/tree/master/aac-objects
+Download from https://media.githubusercontent.com/media/metmuseum/openaccess/master/MetObjects.csv
 
 ## Description of the data structure
 
 ### What data format is this file stored in?
-two csv files and one json file (we probabaly would analyze this json file only). 
+One csv file.
 
 ## What are the records/entities within this data file? What do they represent? 
 Each record represents information an object. 
 
 ### Describe the dimensions of the data.  How many records are there? How many properties about each record are there?
-11157 records in this file. Each record, there are 27 properties in it. 
+474439 records in this file. Each record, there are 51 properties in it. I suppose 17 fields might be helpful for analysis.
+I wrote a short program named "metdata_extract_important_field.py" and the important field imformation has been saved in 
+"mets_important_field.csv"
 
 ## How we might going to analyze the file?
 ### In terms of geographic data
-we will finally want country, state, continent information. 
-However, in this dataset, there is no continent information as well as most state information might be missing (need further verification).
-Thus, we need a programming library which can find out the continent information based on the ingested country information. 
-If city information exist, how do we get state information from city name and country name?
+We might need to screen the geographic information via "geographic type" and then extract the country information. If latitude/longitude numbers are offered, we can run some libaray and get the continent, state, country, or even city information.
 
 ### In terms of date information
-we will use "date_created" information first. If this field is missing, we wil use "date_earlist" field.
-If both fields are missing, we will use "date_latest" field. 
+we will use "Object Date" field. If it is missing, we can consider "Object Begin Date", "Object End Date". If all missing, we can consider "Artist Begin Date" and "Artist End Date".
 
 ## Reason for missing values and the relevant missing values or codes
 
@@ -60,4 +60,3 @@ If both fields are missing, we will use "date_latest" field.
 
 ## What are all the unique values and their meaning? (if you have categorical data).  Don’t do this if there are more than like 10 or 20.
 
-## Need feedback from Jenna and Xinyu on "How we might going to analyze the file?" part.
