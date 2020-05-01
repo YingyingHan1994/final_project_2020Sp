@@ -30,8 +30,6 @@ def extract_need_data (file, need_headers: list):
     <class 'pandas.core.frame.DataFrame'>
     """
     need_data = pd.read_csv(file,
-                   names = met_raw_headers,
-                   header = None,
                    low_memory= False,
                    index_col= False,
                    usecols=need_headers)
@@ -41,10 +39,14 @@ def extract_need_data (file, need_headers: list):
 # Extract data from The Metropolitan Museum of Art (met) raw dataset for further analysis
 met_raw_data_source = "https://media.githubusercontent.com/media/metmuseum/openaccess/master/MetObjects.csv"
 # These are the headers we want to use in our analysis
-useful_headers_met = ['Object ID','Title','Culture', 'Period','Artist Begin Date', 'Artist End Date','Object Date',
-                  'Object Begin Date', 'Object End Date', 'Geography Type', 'City', 'State', 'Country']
+useful_headers_met = ['Object ID','Title','Object Date','Object Begin Date', 'Object End Date', 'City', 'State', 'Country']
 met_data_for_analysis_df = extract_need_data(met_raw_data_source,useful_headers_met)
+met_data_for_analysis_df = met_data_for_analysis_df.rename(columns={'Object ID': "ObjectID", "Object Date": "ObjectDate",
+                                         'Object Begin Date':"ObjectBeginDate",
+                                         'Object End Date': "ObjectEndDate"})
+print(met_data_for_analysis_df.shape)
 
+# met_data_for_analysis_df.to_csv("met_data_for_analysis.csv")
 
 # Extract the data from Indianapolis Museum of Art (IMA) raw metadata for future analysis
 def extract_need_data_from_json (file:json):
@@ -61,16 +63,26 @@ def extract_need_data_from_json (file:json):
         creation_city = each_record["creation_city"]
         creation_state = each_record["creation_state"]
         creation_country = each_record["creation_country"]
-        nationalities = each_record['nationalities']
-        collection_area = each_record['collection_area']
+        # collection_area = each_record['collection_area']
         data_for_analysis = [object_id, title, date_created, date_earliest,
                                  date_latest, creation_city, creation_state,
-                                 creation_country, nationalities, collection_area]
+                                 creation_country]
         data_for_analysis_list.append(data_for_analysis)
-    data_for_analysis_df = pd.DataFrame(data_for_analysis_list)
+    data_for_analysis_df = pd.DataFrame(data_for_analysis_list,
+                                        columns= ["ObjectID", "Title", "ObjectDate", "ObjectBeginDate",
+                                 "ObjectEndDate", "City", "State",
+                                 "Country"],
+                                        )
     return(data_for_analysis_df)
 
-ima_data_for_analysis_df= extract_need_data_from_json ("ima_raw_data.json")
-print(ima_data_for_analysis_df)
 
+ima_data_for_analysis_df= extract_need_data_from_json ("ima_raw_data.json")
+print(ima_data_for_analysis_df.shape)
+# ima_data_for_analysis_df.to_csv("ima_data_for_analysis.csv")
+
+# Concatenate two dataframes into one dataframe.
+piece = {"met":met_data_for_analysis_df, "ima":ima_data_for_analysis_df}
+met_ima_df = pd.concat(piece)
+print(met_ima_df.shape)
+# met_ima_df.to_csv("met_ima_data_for_analysis.csv")
 
