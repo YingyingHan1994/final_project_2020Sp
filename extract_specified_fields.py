@@ -30,9 +30,10 @@ def extract_need_data (file, need_headers: list):
     <class 'pandas.core.frame.DataFrame'>
     """
     need_data = pd.read_csv(file,
-                   names = met_raw_headers ,
+                   names = met_raw_headers,
                    header = None,
                    low_memory= False,
+                   index_col= False,
                    usecols=need_headers)
     return need_data
 
