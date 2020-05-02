@@ -25,7 +25,6 @@ Source:  U.S. Census Bureau, 2014-2018 American Community Survey 5-Year Estimate
 """
 
 import pandas as pd
-import json
 import re
 
 
@@ -61,11 +60,11 @@ def join_ACS_meta_data(filepath_data, filepath_metadata):
 
 
 if __name__ == '__main__':
-    file_data1 = 'Ethnicity Asian Alone/ACSDT5Y2018.B02015_data_with_overlays_2020-05-01T221237.csv'
-    file_metadata1 = 'Ethnicity Asian Alone/ACSDT5Y2018.B02015_metadata_2020-05-01T221237.csv'
+    file_data1 = 'ethnicity_asian_alone/ACSDT5Y2018.B02015_data_with_overlays_2020-05-01T221237.csv'
+    file_metadata1 = 'ethnicity_asian_alone/ACSDT5Y2018.B02015_metadata_2020-05-01T221237.csv'
     join_ACS_meta_data(file_data1, file_metadata1)
 
-    file_data2 = 'Ethnicity First Ancestry/ACSDT5Y2013.B04001_data_with_overlays_2020-05-01T222006.csv'
-    file_metadata2 = 'Ethnicity First Ancestry/ACSDT5Y2013.B04001_metadata_2020-05-01T222006.csv'
+    file_data2 = 'ethnicity_first_ancestry/ACSDT5Y2013.B04001_data_with_overlays_2020-05-01T222006.csv'
+    file_metadata2 = 'ethnicity_first_ancestry/ACSDT5Y2013.B04001_metadata_2020-05-01T222006.csv'
     join_ACS_meta_data(file_data2, file_metadata2)
 
