@@ -8,11 +8,15 @@ and create a data frame with extracted info
 
 """
 import pandas as pd
+import requests
+import lxml.html
 
-############################# SKIP THIS PART ####################################
+# ------------------------------ SKIP THIS PART ------------------------------ #
 # Read in data into data frame
-data_df = pd.read_csv("../Data/World_Bank/World_Bank_Data.csv", usecols=['Country Name', 'Country Code', '2018'], index_col=False)
-meta_df = pd.read_csv("../Data/World_Bank/World_Bank_Metadata.csv", usecols=['Country Code', 'Region', 'IncomeGroup'], index_col=False)
+data_df = pd.read_csv("../Data/World_Bank/World_Bank_Data.csv", usecols=['Country Name', 'Country Code', '2018'],
+                      index_col=False)
+meta_df = pd.read_csv("../Data/World_Bank/World_Bank_Metadata.csv", usecols=['Country Code', 'Region', 'IncomeGroup'],
+                      index_col=False)
 
 # Change column names
 data_df.columns = ['CountryName', 'CountryCode', 'Population']
@@ -50,8 +54,9 @@ grp = df_join.groupby(['Income', 'CountryName', 'Population'])
 # Export data frame to csv file
 df_join.to_csv('WorldBank_merged.csv', index=False, header=True)
 
+
 ###################################################
-#### USE BELOW FUNCTION
+# ----USE BELOW FUNCTION
 ###################################################
 
 def read_worldbank_data(filename1, filename2):
@@ -86,10 +91,10 @@ def read_worldbank_data(filename1, filename2):
     return df_join
 
 
-## Test if the function works
+# Test if the function works
 if __name__ == '__main__':
-    filename1 = "World_Bank_Data.csv"
-    filename2 = "World_Bank_Metadata.csv"
+    f1 = "World_Bank_Data.csv"
+    f2 = "World_Bank_Metadata.csv"
 
-    df = read_worldbank_data(filename1, filename2)
+    df = read_worldbank_data(f1, f2)
     print(df.head())
