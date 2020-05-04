@@ -22,6 +22,12 @@ Currently contains two dataset:
 ...
 
 Source:  U.S. Census Bureau, 2014-2018 American Community Survey 5-Year Estimates
+
+Use 'demonyms.csv' to convert nationality to country name
+
+Source:
+https://github.com/knowitall/chunkedextractor/blob/master/src/main/resources/edu/knowitall/chunkedextractor/demonyms.csv
+
 """
 
 import pandas as pd
@@ -29,13 +35,14 @@ import re
 
 
 def join_ACS_meta_data(filepath_data, filepath_metadata):
-    '''
+    """
     Combine the U.S. ethnicity metadata downloaded from U.S. Census Bureau into one pandas DataFrame
+    Then use demonyms.csv to query the country name by nationality
     :param filepath_data: the path of the 'data_with_overlays'.csv file
     :param filepath_metadata: the path of the 'metadata'.csv file
-    :return: a pandas DataFrame, columns={'Ethnicity', 'Population'}, recommend to use regular expression to
+    :return: a pandas DataFrame, columns={'Ethnicity', 'Population', 'Country'}, recommend to use regular expression to
                 match the ethnicity because of some annotations inside the cell
-    '''
+    """
     ACS_data = pd.read_csv(filepath_data, index_col='GEO_ID').T
     ACS_metadata = pd.read_csv(filepath_metadata, index_col='GEO_ID')
 
@@ -54,17 +61,22 @@ def join_ACS_meta_data(filepath_data, filepath_metadata):
     merged_data['id'] = merged_data['id'].str.replace(re_expression, r'\1')
     merged_data.columns = ['Ethnicity', 'Population']
     merged_data.reset_index(drop=True, inplace=True)
-    print(merged_data)
 
+    de_df = pd.read_csv('../Data/Raw/Ethnicity/demonyms.csv')
+
+    merged_data = merged_data.merge(de_df, how='left', left_on='Ethnicity', right_on='Nationality')
+    merged_data = merged_data[['Ethnicity', 'Population', 'Country']]
+    print(merged_data)
     return merged_data
 
 
 if __name__ == '__main__':
-    file_data1 = '../Data/Ethnicity/ethnicity_asian_alone/ACSDT5Y2018.B02015_data_with_overlays_2020-05-01T221237.csv'
-    file_metadata1 = '../Data/Ethnicity/ethnicity_asian_alone/ACSDT5Y2018.B02015_metadata_2020-05-01T221237.csv'
-    join_ACS_meta_data(file_data1, file_metadata1)
+    file_data1 = '../Data/Raw/Ethnicity/ethnicity_asian_alone/ACSDT5Y2018.B02015_data_with_overlays_2020-05-01T221237' \
+                 '.csv '
+    file_metadata1 = '../Data/Raw/Ethnicity/ethnicity_asian_alone/ACSDT5Y2018.B02015_metadata_2020-05-01T221237.csv'
+    join_ACS_meta_data(file_data1, file_metadata1).to_csv('a', index=False, header=True)
 
-    file_data2 = '../Data/Ethnicity/ethnicity_first_ancestry/ACSDT5Y2013.B04001_data_with_overlays_2020-05-01T222006.csv'
-    file_metadata2 = '../Data/Ethnicity/ethnicity_first_ancestry/ACSDT5Y2013.B04001_metadata_2020-05-01T222006.csv'
-    join_ACS_meta_data(file_data2, file_metadata2)
-
+    file_data2 = '../Data/Raw/Ethnicity/ethnicity_first_ancestry/ACSDT5Y2013.B04001_data_with_overlays_2020-05' \
+                 '-01T222006.csv '
+    file_metadata2 = '../Data/Raw/Ethnicity/ethnicity_first_ancestry/ACSDT5Y2013.B04001_metadata_2020-05-01T222006.csv'
+    join_ACS_meta_data(file_data2, file_metadata2).to_csv('b', index=False, header=True)

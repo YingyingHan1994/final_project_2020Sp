@@ -1,110 +1,134 @@
-Ethnicity,Population
-German,33133923
-German Russian,17790
-Greek,1020770
-Guyanese,196705
-Hungarian,891170
-Icelander,33787
-Iranian,416280
-Irish,21491941
-Israeli,109756
-Italian,13347012
-Latvian,61426
-Lithuanian,393406
-Luxemburger,22757
-Macedonian,47076
-Maltese,29497
-New Zealander,13579
-Northern European,239281
-Norwegian,2972204
-Pennsylvania German,252385
-Polish,6382163
-Portuguese,1008819
-Romanian,334901
-Russian,2046301
-Scandinavian,394650
-Scotch-Irish,2453037
-Scottish,3448675
-Serbian,139915
-Slavic,77850
-Slovak,455805
-Slovene,106819
-Soviet Union,1936
-Subsaharan African,2746129
-Subsaharan African!!Cape Verdean,87805
-Subsaharan African!!Ethiopian,203866
-Subsaharan African!!Ghanaian,95217
-Subsaharan African!!Kenyan,49414
-Subsaharan African!!Liberian,48765
-Subsaharan African!!Nigerian,255771
-Subsaharan African!!Senegalese,12057
-Subsaharan African!!Sierra Leonean,15223
-Subsaharan African!!Somalian,114539
-Subsaharan African!!South African,48466
-Subsaharan African!!Sudanese,37973
-Subsaharan African!!Ugandan,10711
-Subsaharan African!!Zimbabwean,6922
-Subsaharan African!!African,1623286
-Subsaharan African!!Other Subsaharan African,136114
-Swedish,2393065
-Swiss,559293
-Turkish,161926
-Ukrainian,687741
-Welsh,901501
-West Indian (except Hispanic groups),2427518
-West Indian (except Hispanic groups)!!Bahamian,38072
-West Indian (except Hispanic groups)!!Barbadian,51212
-West Indian (except Hispanic groups)!!Belizean,46326
-West Indian (except Hispanic groups)!!Bermudan,4745
-West Indian (except Hispanic groups)!!British West Indian,82224
-West Indian (except Hispanic groups)!!Dutch West Indian,29295
-West Indian (except Hispanic groups)!!Haitian,842093
-West Indian (except Hispanic groups)!!Jamaican,925165
-West Indian (except Hispanic groups)!!Trinidadian and Tobagonian,173898
-West Indian (except Hispanic groups)!!U.S. Virgin Islander,12115
-West Indian (except Hispanic groups)!!West Indian,217577
-West Indian (except Hispanic groups)!!Other West Indian,4796
-Yugoslavian,238081
-Other groups,113940379
-Unclassified or not reported,38094198
-Total,311536594
-Afghan,82841
-Albanian,172369
-Alsatian,5984
-American,20200882
-Arab,1447822
-Arab!!Egyptian,195192
-Arab!!Iraqi,97579
-Arab!!Jordanian,57028
-Arab!!Lebanese,362309
-Arab!!Moroccan,69719
-Arab!!Palestinian,85186
-Arab!!Syrian,111035
-Arab!!Arab,252744
-Arab!!Other Arab,217030
-Armenian,400725
-Assyrian/Chaldean/Syriac,93132
-Australian,66474
-Austrian,384041
-Basque,42821
-Belgian,223093
-Brazilian,322407
-British,927622
-Bulgarian,81226
-Cajun,88564
-Canadian,512572
-Carpatho Rusyn,5974
-Celtic,37037
-Croatian,271577
-Cypriot,5869
-Czech,870036
-Czechoslovakian,198074
-Danish,796520
-Dutch,2541779
-Eastern European,421598
-English,17484151
-Estonian,21648
-European,3155155
-Finnish,443798
-French (except Basque),5024136
-French Canadian,1515220
+Ethnicity,Population,Country
+Asian Indian,3852293,
+Bangladeshi,169835,Bangladesh
+Bhutanese,27300,Bhutan
+Burmese,160339,Burma
+Cambodian,260950,Cambodia
+Chinese,4034340,China
+Filipino,2843071,Philippines
+Hmong,289199,
+Indonesian,73194,Indonesia
+Japanese,773714,Japan
+Korean,1455834,
+Laotian,206887,Laos
+Malaysian,19710,Malaysia
+Mongolian,19507,Mongolia
+Nepalese,150900,
+Okinawan,3348,Okinawa
+Pakistani,467123,Pakistan
+Sri Lankan,49069,Sri Lanka
+Taiwanese,165365,Taiwan
+Thai,200241,Thailand
+Vietnamese,1781447,Vietnam
+"Other Asian, specified",5173,
+"Other Asian, not specified",148191,
+Two or more Asian,417520,
+German,33133923,Germany
+German Russian,17790,
+Greek,1020770,Greece
+Guyanese,196705,Guyana
+Hungarian,891170,Hungary
+Icelander,33787,
+Iranian,416280,Iran
+Irish,21491941,Ireland
+Israeli,109756,Israel
+Italian,13347012,Italy
+Latvian,61426,Latvia
+Lithuanian,393406,Lithuania
+Luxemburger,22757,
+Macedonian,47076,Macedonia
+Maltese,29497,Malta
+New Zealander,13579,New Zealand
+Northern European,239281,
+Norwegian,2972204,Norway
+Pennsylvania German,252385,
+Polish,6382163,Poland
+Portuguese,1008819,Portugal
+Romanian,334901,Romania
+Russian,2046301,Russia
+Scandinavian,394650,Scandinavia
+Scotch-Irish,2453037,
+Scottish,3448675,Scotland
+Serbian,139915,Serbia
+Slavic,77850,
+Slovak,455805,Slovakia
+Slovene,106819,Slovenia
+Soviet Union,1936,
+Subsaharan African,2746129,
+Subsaharan African!!Cape Verdean,87805,
+Subsaharan African!!Ethiopian,203866,
+Subsaharan African!!Ghanaian,95217,
+Subsaharan African!!Kenyan,49414,
+Subsaharan African!!Liberian,48765,
+Subsaharan African!!Nigerian,255771,
+Subsaharan African!!Senegalese,12057,
+Subsaharan African!!Sierra Leonean,15223,
+Subsaharan African!!Somalian,114539,
+Subsaharan African!!South African,48466,
+Subsaharan African!!Sudanese,37973,
+Subsaharan African!!Ugandan,10711,
+Subsaharan African!!Zimbabwean,6922,
+Subsaharan African!!African,1623286,
+Subsaharan African!!Other Subsaharan African,136114,
+Swedish,2393065,Sweden
+Swiss,559293,Switzerland
+Turkish,161926,Turkey
+Ukrainian,687741,Ukraine
+Welsh,901501,Wales
+West Indian (except Hispanic groups),2427518,
+West Indian (except Hispanic groups)!!Bahamian,38072,
+West Indian (except Hispanic groups)!!Barbadian,51212,
+West Indian (except Hispanic groups)!!Belizean,46326,
+West Indian (except Hispanic groups)!!Bermudan,4745,
+West Indian (except Hispanic groups)!!British West Indian,82224,
+West Indian (except Hispanic groups)!!Dutch West Indian,29295,
+West Indian (except Hispanic groups)!!Haitian,842093,
+West Indian (except Hispanic groups)!!Jamaican,925165,
+West Indian (except Hispanic groups)!!Trinidadian and Tobagonian,173898,
+West Indian (except Hispanic groups)!!U.S. Virgin Islander,12115,
+West Indian (except Hispanic groups)!!West Indian,217577,
+West Indian (except Hispanic groups)!!Other West Indian,4796,
+Yugoslavian,238081,
+Other groups,113940379,
+Unclassified or not reported,38094198,
+Total,311536594,
+Afghan,82841,Afghanistan
+Albanian,172369,Albania
+Alsatian,5984,Alsace
+American,20200882,United States
+Arab,1447822,Haugesund
+Arab!!Egyptian,195192,
+Arab!!Iraqi,97579,
+Arab!!Jordanian,57028,
+Arab!!Lebanese,362309,
+Arab!!Moroccan,69719,
+Arab!!Palestinian,85186,
+Arab!!Syrian,111035,
+Arab!!Arab,252744,
+Arab!!Other Arab,217030,
+Armenian,400725,Armenia
+Assyrian/Chaldean/Syriac,93132,
+Australian,66474,Australia
+Austrian,384041,Austria
+Basque,42821,Basque Country
+Belgian,223093,Belgium
+Brazilian,322407,Brazil
+British,927622,United Kingdom
+Bulgarian,81226,Bulgaria
+Cajun,88564,Lousiana
+Canadian,512572,Canada
+Carpatho Rusyn,5974,
+Celtic,37037,
+Croatian,271577,Croatia
+Cypriot,5869,Cyprus
+Czech,870036,Czech Republic
+Czechoslovakian,198074,Czechoslovakia
+Danish,796520,Denmark
+Dutch,2541779,Netherlands
+Eastern European,421598,
+English,17484151,England
+Estonian,21648,Estonia
+European,3155155,Europe
+Finnish,443798,Finland
+French (except Basque),5024136,
+French Canadian,1515220,
