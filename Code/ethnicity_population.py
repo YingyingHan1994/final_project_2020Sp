@@ -2,7 +2,7 @@
 IS590PR: Final Project
 Written by: Xinyu Huang
 
-This part will extract American Ethnicity population data from cvs dataset derived from data.census.gov
+This part will extract American Ethnicity population data from csv dataset derived from data.census.gov
 
 Currently contains two dataset:
     Asian Alone Ethnicity in U.S.
