@@ -23,12 +23,11 @@ def extract_need_data (file, need_headers: list):
     :param file: This is a file storing raw museum metadata. It can be an online link, a csv file, etc.
     :param need_headers: This is a list, in which stores the fields that are going to be analyzed in the project.
     :return: All records under specified fields will be returned in the format of a dataframe.
-    # >>> file = "https://media.githubusercontent.com/media/metmuseum/openaccess/master/MetObjects.csv"
-    # >>> header = ["Object ID", "Country"]
-    # >>> df = extract_need_data(file, header)
-    # >>> df.iloc[0][0]
-    # "1"
-    # >>> type(df)
+    >>> import pandas as pd
+    >>> file = "museum.csv"
+    >>> header = ["ObjectID", "Title"]
+    >>> df = extract_need_data(file, header)
+    >>> type(df)
     <class 'pandas.core.frame.DataFrame'>
     """
     need_data = pd.read_csv(file,
@@ -39,6 +38,18 @@ def extract_need_data (file, need_headers: list):
 
 ## B) Indianapolis Museum of Art (IMA)
 def extract_need_data_from_json (file:json):
+    """
+    Given a museum raw metadata file downloaded from Indianopolis Museum of Art, this function return a dataframe with
+    8 columns. The 8 columns are: "ObjectID", "Title", "ObjectDate", "ObjectBeginDate","ObjectEndDate", "City",
+    "State","Country".
+    :param file: A museum raw metadata file downloaded from Indianopolis Museum of Art
+    :return: A dataframe with 8 columns.
+    >>> file = "ima_raw_data.json"
+    >>> df = extract_need_data_from_json(file)
+    >>> title_list = df["Title"].tolist()
+    >>> title_list[0]
+    'evening dress'
+    """
     f = open(file, "r")
     data = json.load(f)
     all_records = data['data']
