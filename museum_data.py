@@ -1,23 +1,25 @@
-import csv
 import json
 import re
 import pandas as pd
 
-## Collect data and extract info needed for analysis
+# Collect data and extract info needed for analysis
 
-## 1. Museum dataset
-## A) The Metropolitan Museum of Art (MET)
+# 1. Museum dataset
+# A) The Metropolitan Museum of Art (MET)
 met_raw_headers = ['Object Number', 'Is Highlight', 'Is Public Domain', 'Is Timeline Work', 'Object ID',
-           'Department', 'AccessionYear', 'Object Name', 'Title', 'Culture', 'Period', 'Dynasty',
-           'Reign', 'Portfolio', 'Artist Role', 'Artist Prefix', 'Artist Display Name', 'Artist Display Bio',
-           'Artist Suffix', 'Artist Alpha Sort', 'Artist Nationality', 'Artist Begin Date', 'Artist End Date',
-           'Artist Gender', 'Artist ULAN URL', 'Artist Wikidata URL', 'Object Date', 'Object Begin Date',
-           'Object End Date', 'Medium', 'Dime Bnsions', 'Credit Line', 'Geography Type', 'City', 'State', 'County',
-           'Country', 'Region', 'Subregion', 'Locale', 'Locus', 'Excavation', 'River', 'Classification',
-           'Rights and Reproduction', 'Link Resource', 'Object Wikidata URL', 'Metadata Date', 'Repository', 'Tags',
-           'Tags AAT URL']
+                   'Department', 'AccessionYear', 'Object Name', 'Title', 'Culture', 'Period', 'Dynasty',
+                   'Reign', 'Portfolio', 'Artist Role', 'Artist Prefix', 'Artist Display Name', 'Artist Display Bio',
+                   'Artist Suffix', 'Artist Alpha Sort', 'Artist Nationality', 'Artist Begin Date', 'Artist End Date',
+                   'Artist Gender', 'Artist ULAN URL', 'Artist Wikidata URL', 'Object Date', 'Object Begin Date',
+                   'Object End Date', 'Medium', 'Dime Bnsions', 'Credit Line', 'Geography Type', 'City', 'State',
+                   'County',
+                   'Country', 'Region', 'Subregion', 'Locale', 'Locus', 'Excavation', 'River', 'Classification',
+                   'Rights and Reproduction', 'Link Resource', 'Object Wikidata URL', 'Metadata Date', 'Repository',
+                   'Tags',
+                   'Tags AAT URL']
 
-def extract_need_data (file, need_headers: list):
+
+def extract_need_data(file, need_headers: list):
     """
     Given a file storing raw data, extract the records under specified fields for future analysis.
     :param file: This is a file storing raw museum metadata. It can be an online link, a csv file, etc.
@@ -31,13 +33,14 @@ def extract_need_data (file, need_headers: list):
     <class 'pandas.core.frame.DataFrame'>
     """
     need_data = pd.read_csv(file,
-                   low_memory= False,
-                   index_col= False,
-                   usecols=need_headers)
+                            low_memory=False,
+                            index_col=False,
+                            usecols=need_headers)
     return need_data
 
-## B) Indianapolis Museum of Art (IMA)
-def extract_need_data_from_json (file:json):
+
+# B) Indianapolis Museum of Art (IMA)
+def extract_need_data_from_json(file: json):
     """
     Given a museum raw metadata file downloaded from Indianopolis Museum of Art, this function return a dataframe with
     8 columns. The 8 columns are: "ObjectID", "Title", "ObjectDate", "ObjectBeginDate","ObjectEndDate", "City",
@@ -65,17 +68,18 @@ def extract_need_data_from_json (file:json):
         creation_country = each_record["creation_country"]
         # collection_area = each_record['collection_area']
         data_for_analysis = [object_id, title, date_created, date_earliest,
-                                 date_latest, creation_city, creation_state,
-                                 creation_country]
+                             date_latest, creation_city, creation_state,
+                             creation_country]
         data_for_analysis_list.append(data_for_analysis)
     data_for_analysis_df = pd.DataFrame(data_for_analysis_list,
-                                        columns= ["ObjectID", "Title", "ObjectDate", "ObjectBeginDate",
-                                 "ObjectEndDate", "City", "State",
-                                 "Country"],
+                                        columns=["ObjectID", "Title", "ObjectDate", "ObjectBeginDate",
+                                                 "ObjectEndDate", "City", "State",
+                                                 "Country"],
                                         )
-    return(data_for_analysis_df)
+    return data_for_analysis_df
 
-## C) Merge data from two files into one data frame
+
+# C) Merge data from two files into one data frame
 def merge_met_ima(filename1, filename2):
     """
     Merge data from two csv file (MET & IMA) with different structures
@@ -86,17 +90,17 @@ def merge_met_ima(filename1, filename2):
     :return: a pandas data frame
     """
     met_headers = ['ObjectID', 'Title', 'ObjectDate', 'ObjectBeginDate', 'ObjectEndDate', 'City',
-                   'State', 'Country 1', 'Country 2', 'Country 3', 'Country 4' ,'Country 5']
+                   'State', 'Country 1', 'Country 2', 'Country 3', 'Country 4', 'Country 5']
     ima_headers = ['ObjectID', 'Title', 'ObjectDate', 'ObjectBeginDate', 'ObjectEndDate', 'City',
-                   'State 1', 'State 2', 'State 3', 'Country 1' ,'Country 2']
+                   'State 1', 'State 2', 'State 3', 'Country 1', 'Country 2']
     new_headers = ['ObjectID', 'Title', 'ObjectDate', 'ObjectBeginDate', 'ObjectEndDate', 'City',
-                   'State 1', 'State 2', 'State 3', 'Country 1' ,'Country 2', 'Country 3', 'Country 4' ,'Country 5']
+                   'State 1', 'State 2', 'State 3', 'Country 1', 'Country 2', 'Country 3', 'Country 4', 'Country 5']
 
     met_data_for_analysis_df = pd.read_csv(filename1, usecols=met_headers, index_col=False)
     ima_data_for_analysis_df = pd.read_csv(filename2, usecols=ima_headers, index_col=False)
 
     # Align structure of two data frame for concatenation
-    met_data_for_analysis_df.rename(columns = {'State':'State 1'}, inplace = True)
+    met_data_for_analysis_df.rename(columns={'State': 'State 1'}, inplace=True)
     met_data_for_analysis_df["State 2"] = ""
     met_data_for_analysis_df["State 3"] = ""
     met_data_for_analysis_df = met_data_for_analysis_df.reindex(columns=new_headers)
@@ -112,7 +116,8 @@ def merge_met_ima(filename1, filename2):
 
     return met_ima_df
 
-## 2. World Bank Dataset
+
+# 2. World Bank Dataset
 def read_worldbank_data(filename1, filename2):
     """
     This function is to read in data from two World Bank datasets
@@ -140,15 +145,21 @@ def read_worldbank_data(filename1, filename2):
 
     return df_join
 
-## 3. Ethinicity Dataset
+
+# 3. Ethnicity Dataset
 def join_ACS_meta_data(filepath_data, filepath_metadata):
-    '''
+    """
     Combine the U.S. ethnicity metadata downloaded from U.S. Census Bureau into one pandas DataFrame
     :param filepath_data: the path of the 'data_with_overlays'.csv file
     :param filepath_metadata: the path of the 'metadata'.csv file
     :return: a pandas DataFrame, columns={'Ethnicity', 'Population'}, recommend to use regular expression to
                 match the ethnicity because of some annotations inside the cell
-    '''
+    >>> filepath1 = 'Data/Raw/Ethnicity/ethnicity_asian_alone/ACSDT5Y2018.B02015_data_with_overlays_2020-05-01T221237.csv'
+    >>> filepath2 = 'Data/Raw/Ethnicity/ethnicity_asian_alone/ACSDT5Y2018.B02015_metadata_2020-05-01T221237.csv'
+    >>> result = join_ACS_meta_data(filepath1, filepath2)
+    >>> result.columns()
+    Index(['Ethnicity', 'Population', 'Country'], dtype='object')
+    """
     ACS_data = pd.read_csv(filepath_data, index_col='GEO_ID').T
     ACS_metadata = pd.read_csv(filepath_metadata, index_col='GEO_ID')
 
@@ -171,29 +182,31 @@ def join_ACS_meta_data(filepath_data, filepath_metadata):
 
     return merged_data
 
-## 4.  Main Function
-if __name__ == '__main__':
 
+# 4.  Main Function
+if __name__ == '__main__':
     # 1. Museum datasets
     # 1-1. Extract data from  the Metropolitan Museum of Art (met) dataset
     met_raw_data_source = "https://media.githubusercontent.com/media/metmuseum/openaccess/master/MetObjects.csv"
     # These are the headers we want to use in our analysis
-    useful_headers_met = ['Object ID','Title','Object Date','Object Begin Date', 'Object End Date', 'City', 'State', 'Country']
-    met_data_for_analysis_df = extract_need_data(met_raw_data_source,useful_headers_met)
-    met_data_for_analysis_df = met_data_for_analysis_df.rename(columns={'Object ID': "ObjectID", "Object Date": "ObjectDate",
-                                             'Object Begin Date':"ObjectBeginDate",
-                                             'Object End Date': "ObjectEndDate"})
+    useful_headers_met = ['Object ID', 'Title', 'Object Date', 'Object Begin Date', 'Object End Date', 'City', 'State',
+                          'Country']
+    met_data_for_analysis_df = extract_need_data(met_raw_data_source, useful_headers_met)
+    met_data_for_analysis_df = met_data_for_analysis_df.rename(
+        columns={'Object ID': "ObjectID", "Object Date": "ObjectDate",
+                 'Object Begin Date': "ObjectBeginDate",
+                 'Object End Date': "ObjectEndDate"})
 
     # print(met_data_for_analysis_df.shape)
     # met_data_for_analysis_df.to_csv("met_data_for_analysis.csv")
 
     # 1-2. Extract the data from Indianapolis Museum of Art (IMA) metadata
-    ima_data_for_analysis_df= extract_need_data_from_json ("ima_raw_data.json")
+    ima_data_for_analysis_df = extract_need_data_from_json("ima_raw_data.json")
     print(ima_data_for_analysis_df.shape)
     # ima_data_for_analysis_df.to_csv("ima_data_for_analysis.csv")
 
     # 1-3. Clean data of two files with OpenRefine tool
-    fil1 = "met_data_for_analysis-clean.csv"
+    file1 = "met_data_for_analysis-clean.csv"
     file2 = "ima_data_for_analysis-clean.csv"
 
     # 1-4. Concatenate two dataframes into one data frame.
@@ -213,7 +226,8 @@ if __name__ == '__main__':
     file_metadata1 = '../Data/Ethnicity/ethnicity_asian_alone/ACSDT5Y2018.B02015_metadata_2020-05-01T221237.csv'
     join_ACS_meta_data(file_data1, file_metadata1)
 
-    file_data2 = '../Data/Ethnicity/ethnicity_first_ancestry/ACSDT5Y2013.B04001_data_with_overlays_2020-05-01T222006.csv'
+    file_data2 = '../Data/Ethnicity/ethnicity_first_ancestry/ACSDT5Y2013.B04001_data_with_overlays_2020-05-01T222006' \
+                 '.csv '
     file_metadata2 = '../Data/Ethnicity/ethnicity_first_ancestry/ACSDT5Y2013.B04001_metadata_2020-05-01T222006.csv'
     acs_df = join_ACS_meta_data(file_data2, file_metadata2)
     # acs_df.to_csv('ethnicity.csv', index=False, header=True)

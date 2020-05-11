@@ -66,7 +66,6 @@ def join_ACS_meta_data(filepath_data, filepath_metadata):
 
     merged_data = merged_data.merge(de_df, how='left', left_on='Ethnicity', right_on='Nationality')
     merged_data = merged_data[['Ethnicity', 'Population', 'Country']]
-    print(merged_data)
     return merged_data
 
 
