@@ -39,30 +39,42 @@ Please find the codes in "IS590PRSP20_Final_Proejct.ipynb". The analysis are con
 
 # Conclusion
 ## (1) What is the distribution of museum artifacts that originate from USA?
-The result is shown in Image 1. 
+The result is shown in Image 1 titled "States1".  
+![Image of Yaktocat](https://github.com/YingyingHan1994/final_project_2020Sp/blob/master/images/states_distribution.png)
 
 ## (2) How many artifacts are from countries outside USA? What are those countries?  
-The result is shown in Image 2.
+The result is shown in Image 2 titled "Count".
+![Image of Yaktocat](https://github.com/YingyingHan1994/final_project_2020Sp/blob/master/images/country_distribution.png)
 
 ## (3) Is there a correlation between the number of artifacts with one ethnicity and the population of that ethnicity in & outside USA? 
-The results are shown in Image 3 and Image 4.
-
+![Image of Yaktocat](https://github.com/YingyingHan1994/final_project_2020Sp/blob/master/images/correlation_with_population.png)
+![Image of Yaktocat](https://github.com/YingyingHan1994/final_project_2020Sp/blob/master/images/correlation_with_ethnicity.png)
 ## (4) What is the distribution of artifacts over time?  
-      a. How many objects were created before year zero, in year zero, and after year zero?
+a. How many objects were created before year zero, in year zero, and after year zero?
       The result is shown in Image 5.
-      
-      b. What is the year distribution of objects created before year zero?
+      ![Image of Yaktocat](https://github.com/YingyingHan1994/final_project_2020Sp/blob/master/images/year_zero_distribution.png)
+      We found that 415316 object were created after year Zero and year value range from year 1 to year 2020.  
+      There are a huge amount of objects were created after Year Zero (# 415316), however, the year values cover from year 1 to year 2020 only.  
+      1253 objects were created in year zero. 
+b. What is the year distribution of objects created before year zero?
       The result is shown in Image 6.
+      ![Image of Yaktocat](https://github.com/YingyingHan1994/final_project_2020Sp/blob/master/images/bc_distribution.png)
       
-      c. What is the century distribution of objects created after year zero?
+c. What is the century distribution of objects created after year zero?
       The result is shown in Image 7.
+      ![Image of Yaktocat](https://github.com/YingyingHan1994/final_project_2020Sp/blob/master/images/century_distribution.png)
       
-      d. How many objects are created after (including) 19th century? and what is the year distribution?
-      The result is shown in Image 8 and Image 9.
+d. How many objects are created after (including) 19th century? and what is the year distribution?
+      The result is shown in Image 8 and Image 8.
+      ![Image of Yaktocat](https://github.com/YingyingHan1994/final_project_2020Sp/blob/master/images/after19century_distribution_halfcentury.png)
       
-      e. In terms of those objects created in Egypt, how many of them were created before year zero?
+![Image of Yaktocat](https://github.com/YingyingHan1994/final_project_2020Sp/blob/master/images/after19century_distribution_25years.png)
       
-      f. In terms of those objects created in China, how many of them were created before year zero?
+e. In terms of those objects created in Egypt, how many of them were created before year zero?
+      ![Image of Yaktocat](https://github.com/YingyingHan1994/final_project_2020Sp/blob/master/images/egypt_object_year_distribution.png)
+      ![Image of Yaktocat](https://github.com/YingyingHan1994/final_project_2020Sp/blob/master/images/egypt_pie.png)
       
+f. In terms of those objects created in China, how many of them were created before year zero?
+      ![Image of Yaktocat](https://github.com/YingyingHan1994/final_project_2020Sp/blob/master/images/chinese_pie.png)
       
      
