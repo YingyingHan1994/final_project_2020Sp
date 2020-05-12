@@ -1,20 +1,22 @@
 # Project Name: Where did the exotic artefacts come from in art museums in USA?
 # Team members:
-Yingying Han
-Xinyu Huang
+Yingying Han  
+Xinyu Huang  
 Jenna Kim
 # Research questions and hypothesis:
-(1) What is the distribution of museum artifacts that originate from USA?
-(2) How many artifacts are from countries outside USA? What are those countries?
-(3) Is there a correlation between the number of artifacts with one ethnicity and the population of that ethnicity in & outside USA?
-(4) What is the distribution of artifacts over time?
+(1) What is the distribution of museum artifacts that originate from USA?  
+(2) How many artifacts are from countries outside USA? What are those countries?  
+(3) Is there a correlation between the number of artifacts with one ethnicity and the population of that ethnicity in & outside USA?  
+(4) What is the distribution of artifacts over time?  
 # Raw Data:
 (1) Museum datasets:
-The project has analyzed museum metadata from the Metropolitan Museum of Art (MET) and Indianapolis Museum of Art (IMA). Both the museums have make their metadata open access on the Github.
-Metropolitan Museum of Art (MET): https://media.githubusercontent.com/media/metmuseum/openaccess/master/MetObjects.csv
-Indianapolis Museum of Art (IMA): https://github.com/american-art/ima/blob/master/aac-objects/aac-objects.json
-(2) The worldwide population dataset is downloaded from world bank at https://data.worldbank.org/indicator/sp.pop.totl.
-(3) The American ethnicity dataset is downloaded from U.S. Census Bureau website at https://data.census.gov.
+The project has analyzed museum metadata from the Metropolitan Museum of Art (MET) and Indianapolis Museum of Art (IMA). Both the museums have make their metadata open access on the Github.  
+Metropolitan Museum of Art (MET): https://media.githubusercontent.com/media/metmuseum/openaccess/master/MetObjects.csv  
+Indianapolis Museum of Art (IMA): https://github.com/american-art/ima/blob/master/aac-objects/aac-objects.json  
+
+(2) The worldwide population dataset is downloaded from world bank at https://data.worldbank.org/indicator/sp.pop.totl.  
+
+(3) The American ethnicity dataset is downloaded from U.S. Census Bureau website at https://data.census.gov.  
 
 # Data pre-processing and cleaning
 (1) Museum datasets
@@ -37,4 +39,5 @@ Please find the codes in "IS590PRSP20_Final_Proejct.ipynb". The analysis are con
 
 # Conclusion
 ## (1) What is the distribution of museum artifacts that originate from USA?
+
 
