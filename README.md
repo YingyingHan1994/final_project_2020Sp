@@ -39,5 +39,25 @@ Please find the codes in "IS590PRSP20_Final_Proejct.ipynb". The analysis are con
 
 # Conclusion
 ## (1) What is the distribution of museum artifacts that originate from USA?
+The result is shown in Image 1. 
 
+## (2) How many artifacts are from countries outside USA? What are those countries?  
+The result is shown in Image 2.
 
+## (3) Is there a correlation between the number of artifacts with one ethnicity and the population of that ethnicity in & outside USA? 
+The results are shown in Image 3 and Image 4.
+
+## (4) What is the distribution of artifacts over time?  
+      a. How many objects were created before year zero, in year zero, and after year zero?
+      The result is shown in Image 5.
+      
+      b. What is the year distribution of objects created before year zero?
+      The result is shown in Image 6.
+      
+      c. What is the century distribution of objects created after year zero?
+      The result is shown in Image 7.
+      
+      d. 
+      
+      
+     
