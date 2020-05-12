@@ -33,9 +33,9 @@ Please find the code in "museum_data.py": The fourth function in this script ext
 Please find the code in "museum_data.py": The fifth function in this script clean the ethnicity dataset by dropping the blank columns and discarding rows of margin error. The clean ethnicity data names "ethnicity.csv".
 
 # Data analysis
-Please find the codes in "IS590PRSP20_Final_Proejct.ipynb". The analysis are conducted from two aspects: 
-(1)Distribution of artifacts by geographical information
-(2)Distribution of artifacts by time
+Please find the codes in "IS590PRSP20_Final_Proejct.ipynb". The analysis are conducted from two aspects:  
+(1)Distribution of artifacts by geographical information  
+(2)Distribution of artifacts by time  
 
 # Conclusion
 ## (1) What is the distribution of museum artifacts that originate from USA?
@@ -57,7 +57,12 @@ The results are shown in Image 3 and Image 4.
       c. What is the century distribution of objects created after year zero?
       The result is shown in Image 7.
       
-      d. 
+      d. How many objects are created after (including) 19th century? and what is the year distribution?
+      The result is shown in Image 8 and Image 9.
+      
+      e. In terms of those objects created in Egypt, how many of them were created before year zero?
+      
+      f. In terms of those objects created in China, how many of them were created before year zero?
       
       
      
