@@ -7,16 +7,16 @@ Yingying Han (yh17):
 (4) Wrote the Readme file.
 
 Xinyu Huang (xinyuh10):  
-Cleaned one of the museum dataset (IMA dataset);  
-Combined and cleaned the American ethnicity data;  
-Analyzed the museum and population part (first three research questions);  
-Optimization with cython.  
+(1) Cleaned one of the museum dataset (IMA dataset);  
+(2) Combined and cleaned the American ethnicity data;  
+(3) Analyzed the museum and population part (first three research questions);  
+(4) Optimization with cython.  
 
 Jenna Kim (jkim682):  
-Cleaned one of the museum dataset (MET dataset);  
-Processed the world bank population dataset;    
-Organized data and code folders;   
-Designed the structure of the analysis, wrote the lead-in and introduction part of the analysis.
+(1) Cleaned one of the museum dataset (MET dataset);  
+(2) Processed the world bank population dataset;    
+(3) Organized data and code folders;   
+(4) Designed the structure of the analysis, wrote the lead-in and introduction part of the analysis.
 
 # Research questions and hypothesis:
 (1) What is the distribution of museum artifacts that originate from USA?  
