@@ -3,9 +3,8 @@
 Yingying Han (yh17):  
 (1) Downloaded the raw museum metadatasets and write a detailed data documentation to each dataset. (see IMA_datadocumentation.md and Met_datadocumentation.md in Data/Raw/Museum folder.)  
 (2) Extracted specified fields from two raw datasets seperately for future analysis 
-(3) Analyzed the year information of the objects (the second part of the analysis in IS590PRSP20_Final_Proejct.ipynb)    
+(3) Analyzed the year information of the objects (the second part of the analysis in IS590PRSP20_Final_Proejct.ipynb)  
 (4) Wrote the Readme file.
-
 
 Xinyu Huang (xinyuh10):  
 Cleaned one of the museum dataset (IMA dataset);  
