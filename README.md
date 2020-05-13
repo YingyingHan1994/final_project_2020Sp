@@ -1,14 +1,22 @@
 # Project Name: Where did the exotic artefacts come from in art museums in USA?
 # Team members and contribution:
-Yingying Han:  
+Yingying Han (yh17):  
+(1) Downloaded the raw museum metadatasets and write a detailed data documentation to each dataset. (see IMA_datadocumentation.md and Met_datadocumentation.md in Data/Raw/Museum folder.)  
+(2) Extracted specified fields from two raw datasets seperately for future analysis 
+(3) Analyzed the year information of the objects (the second part of the analysis in IS590PRSP20_Final_Proejct.ipynb)    
+(4) Wrote the Readme file.
+
 
 Xinyu Huang (xinyuh10):  
-Cleaned one of the museum dataset;  
+Cleaned one of the museum dataset (IMA dataset);  
 Combined and cleaned the American ethnicity data;  
 Analyzed the museum and population part (first three research questions);  
 Optimization with cython.  
 
 Jenna Kim:  
+Cleaned one of the museum dataset (MET dataset);  
+Process the population dataset;
+
 # Research questions and hypothesis:
 (1) What is the distribution of museum artifacts that originate from USA?  
 (2) How many artifacts are from countries outside USA? What are those countries?  
@@ -96,4 +104,6 @@ We found low correlation (0.329) betwen object number from an ethnicity and popu
    ![Image of Yaktocat](https://github.com/YingyingHan1994/final_project_2020Sp/blob/master/images/chinese_pie.png)
       
 99% of the objects from China were created after year zero. Thus, "being an ancient country" does not explain why most of the objects from Egypt were created before year zero. Further discussion is needed in the future. 
+
+
      
