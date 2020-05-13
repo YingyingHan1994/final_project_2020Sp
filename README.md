@@ -15,7 +15,9 @@ Optimization with cython.
 
 Jenna Kim:  
 Cleaned one of the museum dataset (MET dataset);  
-Process the population dataset;
+Processed the world bank population dataset;  
+Organized data and code folders;
+Designed the structure of the analysis, wrote the lead-in and introduction part of the analysis.
 
 # Research questions and hypothesis:
 (1) What is the distribution of museum artifacts that originate from USA?  
