@@ -1,7 +1,13 @@
 # Project Name: Where did the exotic artefacts come from in art museums in USA?
-# Team members:
-Yingying Han  
-Xinyu Huang  
+# Team members and contribution:
+Yingying Han:
+
+Xinyu Huang (xinyuh10):
+Cleaned one of the museum dataset (MET);
+Combined and cleaned the American ethnicity data;
+Analyzed the museum and population part (first three research question);
+Cython optimization.
+
 Jenna Kim
 # Research questions and hypothesis:
 (1) What is the distribution of museum artifacts that originate from USA?  
