@@ -3,10 +3,10 @@
 Yingying Han:
 
 Xinyu Huang (xinyuh10):
-Cleaned one of the museum dataset (MET);
-Combined and cleaned the American ethnicity data;
-Analyzed the museum and population part (first three research question);
-Cython optimization.
+(1) Cleaned one of the museum dataset (MET);
+(2) Combined and cleaned the American ethnicity data;
+(3) Analyzed the museum and population part (first three research question);
+(4) Cython optimization.
 
 Jenna Kim
 # Research questions and hypothesis:
