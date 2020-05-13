@@ -13,10 +13,10 @@ Combined and cleaned the American ethnicity data;
 Analyzed the museum and population part (first three research questions);  
 Optimization with cython.  
 
-Jenna Kim:  
+Jenna Kim (jkim682):  
 Cleaned one of the museum dataset (MET dataset);  
-Processed the world bank population dataset;  
-Organized data and code folders;  
+Processed the world bank population dataset;    
+Organized data and code folders;   
 Designed the structure of the analysis, wrote the lead-in and introduction part of the analysis.
 
 # Research questions and hypothesis:
