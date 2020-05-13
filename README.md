@@ -16,7 +16,7 @@ Optimization with cython.
 Jenna Kim:  
 Cleaned one of the museum dataset (MET dataset);  
 Processed the world bank population dataset;  
-Organized data and code folders;
+Organized data and code folders;  
 Designed the structure of the analysis, wrote the lead-in and introduction part of the analysis.
 
 # Research questions and hypothesis:
