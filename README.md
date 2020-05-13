@@ -15,7 +15,7 @@ Xinyu Huang (xinyuh10):
 Jenna Kim (jkim682):  
 (1) Cleaned one of the museum dataset (MET dataset);  
 (2) Processed the world bank population dataset;    
-(3) Organized data and code folders;   
+(3) Integrated codes (museum_data.py), organized processed data and rearranged code folders;   
 (4) Designed the structure of the analysis, wrote the lead-in and introduction part of the analysis.
 
 # Research questions and hypothesis:
